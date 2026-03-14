@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { motion } from "motion/react";
 import { Phone, Mail, CheckCircle2, Zap, ShieldCheck, Users } from "lucide-react";
+import coverImg from "./assets/cover.png";
 
 const Page = ({ children, title, pageNumber }: { children: ReactNode; title: string; pageNumber: number }) => (
   <motion.section
@@ -33,31 +34,40 @@ export default function App() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/30SEC RESP COVER.png" 
+            src={coverImg} 
             alt="Meerakapp 30-Second Responder System"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-stone-950/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/40 via-stone-950/60 to-stone-950/80 backdrop-contrast-125" />
         </div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl relative z-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-4xl relative z-10 px-8 py-16"
         >
-          <p className="text-xs uppercase tracking-[0.4em] mb-8 text-stone-400">Meerakapp™ Solutions</p>
-          <h1 className="text-5xl md:text-7xl font-serif italic mb-6 leading-tight">
-            Meerakapp™ <br /> Quick Start Guide
+          <p className="text-sm uppercase tracking-[0.5em] mb-16 text-white/70 font-medium drop-shadow-md">Meerakapp™ Solutions</p>
+          
+          <h1 className="text-7xl md:text-9xl font-serif italic mb-10 leading-[0.85] tracking-tighter text-white drop-shadow-[0_15px_15px_rgba(0,0,0,0.6)]">
+            Meerakapp™ <br /> 
+            <span className="text-4xl md:text-6xl block mt-6 font-sans not-italic font-extralight tracking-[0.25em] uppercase opacity-90">
+              Quick Start Guide
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl font-light text-stone-300 mb-12 max-w-lg mx-auto leading-relaxed">
-            How the 30-Second Responder System Helps You Capture Missed Leads Faster and Respond More Professionally
+
+          <div className="h-px w-48 bg-gradient-to-r from-transparent via-white/30 to-transparent mx-auto mb-12" />
+
+          <p className="text-2xl md:text-3xl font-light text-white/90 mb-16 max-w-2xl mx-auto leading-tight drop-shadow-lg">
+            Mastering the 30-Second Responder System to Capture Missed Leads and Elevate Your Professionalism
           </p>
-          <div className="h-px w-24 bg-stone-700 mx-auto mb-12" />
-          <p className="text-[10px] uppercase tracking-widest text-stone-500">
-            Included with the Meerakapp™ 30-Second Responder System
-          </p>
+          
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-[11px] uppercase tracking-[0.4em] text-white/60 font-semibold drop-shadow-sm">
+              Included with the Meerakapp™ 30-Second Responder System
+            </p>
+          </div>
         </motion.div>
       </section>
 
